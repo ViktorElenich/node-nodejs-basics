@@ -8,7 +8,9 @@ const __dirname = dirname(__filename);
 
 export const create = async () => {
   fs.writeFile(path.join(__dirname, 'files', 'fresh.txt'), 'I am fresh and young', (err) => {
-    if (err) throw err;
+    if (err){
+      throw new Error('FS operation failed');
+    }
     console.log('Файл создан');
   })
 };

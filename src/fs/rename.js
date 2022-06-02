@@ -8,7 +8,7 @@ const __dirname = dirname(__filename);
 
 export const rename = async () => {
   fs.rename(path.join(__dirname, 'files', 'wrongFilename.txt'), path.join(__dirname, 'files', 'properFilename.md'), (err) => {
-    if(err) throw err;
+    if(err) throw new Error('FS operation failed');
     console.log('Успешно переименован');
   })
 };
